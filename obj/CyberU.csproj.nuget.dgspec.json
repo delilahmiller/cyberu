@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\CyberU\\CyberU.csproj": {}
+    "C:\\Repos\\CyberU\\CyberU.csproj": {}
   },
   "projects": {
-    "C:\\CyberU\\CyberU.csproj": {
+    "C:\\Repos\\CyberU\\CyberU.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\CyberU\\CyberU.csproj",
+        "projectUniqueName": "C:\\Repos\\CyberU\\CyberU.csproj",
         "projectName": "CyberU",
-        "projectPath": "C:\\CyberU\\CyberU.csproj",
+        "projectPath": "C:\\Repos\\CyberU\\CyberU.csproj",
         "packagesPath": "C:\\Users\\Luke Miller\\.nuget\\packages\\",
-        "outputPath": "C:\\CyberU\\obj\\",
+        "outputPath": "C:\\Repos\\CyberU\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luke Miller\\AppData\\Roaming\\NuGet\\NuGet.Config",
