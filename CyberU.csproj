@@ -4,8 +4,28 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Views\Home\education.html" />
+  </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\css\animate.css" />
+    <None Include="wwwroot\css\bootstrap.min.css" />
+    <None Include="wwwroot\css\custom-fonts.css" />
+    <None Include="wwwroot\css\flexslider.css" />
+    <None Include="wwwroot\css\font-awesome.css" />
+    <None Include="wwwroot\css\gallery-1.css" />
+    <None Include="wwwroot\css\magnific-popup.css" />
+    <None Include="wwwroot\css\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="css\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
   </ItemGroup>
 
 </Project>

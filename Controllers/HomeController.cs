@@ -23,7 +23,12 @@ namespace CyberU.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Education()
+        {
+            return View();
+        }
+
+        public IActionResult Check2()
         {
             return View();
         }
