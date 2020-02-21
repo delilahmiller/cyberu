@@ -108,5 +108,4 @@ C:\Repos\cyberu\bin\Release\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.Workspa
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\CyberU.MvcApplicationPartsAssemblyInfo.cache
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\education.cshtml.g.cs
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Check.cshtml.g.cs
-C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Education2.cshtml.g.cs
-C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Check2.cshtml.g.cs
+C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Breaches.cshtml.g.cs

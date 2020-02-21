@@ -28,7 +28,11 @@ namespace CyberU.Controllers
             return View();
         }
 
-        public IActionResult Check2()
+        public IActionResult Check()
+        {
+            return View();
+        }
+        public IActionResult Breaches()
         {
             return View();
         }
