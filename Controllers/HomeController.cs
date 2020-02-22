@@ -37,6 +37,33 @@ namespace CyberU.Controllers
             return View();
         }
 
+        public IActionResult Passwords()
+        {
+            return View();
+        }
+        public IActionResult AntiVirus()
+        {
+            return View();
+        }
+        public IActionResult Backups()
+        {
+            return View();
+        }
+        public IActionResult HTTPS()
+        {
+            return View();
+        }
+        public IActionResult Phishing()
+        {
+            return View();
+        }
+        public IActionResult SafeBrowsing()
+        {
+            return View();
+        }
+
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

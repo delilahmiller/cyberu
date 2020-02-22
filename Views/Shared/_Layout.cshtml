@@ -29,17 +29,16 @@
                     </div>
                     <div class="navbar-collapse collapse ">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a class="waves-effect waves-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-
-                            <li><a class="waves-effect waves-dark" asp-area="" asp-controller="Home" asp-action="Education">Education</a></li>
-                            <li><a class="waves-effect waves-dark" asp-area="" asp-controller="Home" asp-action="Check">Compromised?</a></li>
-                            <li><a class="waves-effect waves-dark" asp-area="" asp-controller="Home" asp-action="Breaches">Breaches</a></li>
-                            <li class="dropdown">
+                            <li id="home"><a class="waves-effect waves-dark navLink" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li id="education"><a class="waves-effect waves-dark navLink" asp-area="" asp-controller="Home" asp-action="Education">Education</a></li>
+                            <li id="check"><a class="waves-effect waves-dark navLink" asp-area="" asp-controller="Home" asp-action="Check">Compromised?</a></li>
+                            <li id="breaches"><a class="waves-effect waves-dar navLink" asp-area="" asp-controller="Home" asp-action="Breaches">Breaches</a></li>
+                            <li id="dropdown" class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle waves-effect waves-dark">About <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="waves-effect waves-dark" href="about.html">Contact Info</a></li>
-                                    <li><a class="waves-effect waves-dark" href="resources.html">Resources</a></li>
-                                    <li><a class="waves-effect waves-dark" href="#">Admin Login</a></li>
+                                    <li><a class="waves-effect waves-dark navLink" href="about.html">Contact Info</a></li>
+                                    <li><a class="waves-effect waves-dark navLink" href="resources.html">Resources</a></li>
+                                    <li><a class="waves-effect waves-dark navLink" href="#">Admin Login</a></li>
 
                                 </ul>
                             </li>
@@ -70,11 +69,11 @@
                     </div>
                 </nav>
             </header>-->
-            <div>
-                <main role="main" class="pb-3">
-                    @RenderBody()
-                </main>
-            </div>
+        <div>
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
 
         <footer>
             <div class="container">
@@ -142,6 +141,22 @@
     <script src="~/js/jquery.magnific-popup.min.js"></script>
     <script src="~/js/animate.js"></script>
     <script src="~/js/custom.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            setActiveHeaderLink();
+        });
+
+        function setActiveHeaderLink() {
+            $(".navLink").each(function (index) {
+                $(this).closest("li").removeClass("active");
+                if ($(this).attr('href') == window.location.pathname) {
+                    $(this).closest("li").addClass("active");
+                }
+            });
+        }
+
+    </script>
 
 </body>
 </html>

@@ -109,3 +109,9 @@ C:\Repos\cyberu\obj\Release\netcoreapp3.0\CyberU.MvcApplicationPartsAssemblyInfo
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\education.cshtml.g.cs
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Check.cshtml.g.cs
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Breaches.cshtml.g.cs
+C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Passwords.cshtml.g.cs
+C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Phishing.cshtml.g.cs
+C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\SafeBrowsing.cshtml.g.cs
+C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\AntiVirus.cshtml.g.cs
+C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Backups.cshtml.g.cs
+C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\HTTPS.cshtml.g.cs
