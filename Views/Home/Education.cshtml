@@ -3,6 +3,18 @@
     ViewData["Title"] = "Education";
 }
 
+    <script>
+
+        function loadPartialView(vName) {
+            $("#contentHere").load("@Url.Action("GetPartialView","Home")", { 'partialViewName': vName },
+                function (response, status, xhr) {
+                    if (status == "error") {
+                        alert("An error occurred while loading the results." + response);
+                    }
+                });
+        }
+        
+    </script>
 
         <section class="section-padding gray-bg">
             <div class="container">
@@ -24,7 +36,7 @@
                 <div class="col-sm-4 info-blocks">
                     <i class="icon-info-blocks material-icons">vpn_key</i>
                     <div class="info-blocks-in">
-                        <a asp-area="" asp-controller="Home" asp-action="Passwords"><h3>Secure Passwords</h3></a>
+                        <a onclick="loadPartialView('_EducationContent')"><h3>Secure Passwords</h3></a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
                     </div>
                 </div>
@@ -73,11 +85,10 @@
 
             <section class="section-padding">
             </section>
-            <div class="container">
+            <div class="container" id="contentHere">
 
-
-                    </div>
-
+              
+            </div>
 
 
                     <br>

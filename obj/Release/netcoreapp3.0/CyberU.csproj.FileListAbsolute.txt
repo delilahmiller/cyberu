@@ -115,3 +115,4 @@ C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\SafeBrowsing.cshtml.g
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\AntiVirus.cshtml.g.cs
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Backups.cshtml.g.cs
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\HTTPS.cshtml.g.cs
+C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Shared\_EducationContent.cshtml.g.cs

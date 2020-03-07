@@ -62,7 +62,10 @@ namespace CyberU.Controllers
             return View();
         }
 
-
+        public ActionResult GetPartialView(string partialViewName)
+        {
+            return PartialView(partialViewName);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
