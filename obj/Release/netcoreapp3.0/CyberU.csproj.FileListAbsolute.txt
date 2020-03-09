@@ -115,3 +115,5 @@ C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Shared\_AntivirusContent.c
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Shared\_BackupsContent.cshtml.g.cs
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Shared\_HTTPSContent.cshtml.g.cs
 C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\About.cshtml.g.cs
+C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Login.cshtml.g.cs
+C:\Repos\cyberu\obj\Release\netcoreapp3.0\Razor\Views\Home\Resources.cshtml.g.cs
