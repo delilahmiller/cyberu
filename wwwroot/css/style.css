@@ -1755,3 +1755,7 @@ span.color {
 .alert-danger { 
     float: left;
 }
+
+.linkLoader:hover {
+    cursor: pointer;
+}
