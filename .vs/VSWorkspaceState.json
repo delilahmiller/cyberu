@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Models",
+    "\\Views",
+    "\\Views\\Home"
   ],
-  "SelectedNode": "\\CyberU.sln",
+  "SelectedNode": "\\CyberU.csproj",
   "PreviewInSolutionExplorer": false
 }
