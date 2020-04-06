@@ -751,10 +751,11 @@ form#commentform textarea {
 
 .about-text li {
 	margin-bottom: 10px;
-	//
-	font-weight: bold;
-	list-style: none;
+	
+	/*font-weight: bold;*/
+	list-style: decimal;
 }
+
 
  
 .about-text-2 img {
@@ -1754,4 +1755,8 @@ span.color {
 }
 .alert-danger { 
     float: left;
+}
+
+.linkLoader:hover {
+    cursor: pointer;
 }

@@ -18,96 +18,87 @@
 
 <script>
     $(document).ready(function () {
-        $("#button").click(function () {
-            $('html', 'body').animate({
-                scrollTop: $("#contentArea").offset().top
-            }, 2000);
+        $(".linkLoader").click(function () {
+            var element = document.getElementById("contentHere");
+            element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
         });
     });
    
 </script>
+<div id="education">
+    <section class="section-padding gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center">
 
-<section class="section-padding gray-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title text-center">
+                        <h4>choose a topic to</h4>
+                        <h2>Cyber-educate Yourself.</h2>
 
-                    <h4>choose a topic to</h4>
-                    <h2>Cyber-educate Yourself.</h2>
-
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section id="content">
-    <div>
-        <div class="row">
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons">vpn_key</i>
-                <div class="info-blocks-in">
-                    <button id="button"  onclick="loadPartialView('_PasswordsContent')"><h3>Secure Passwords</h3></button>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons">remove_red_eye</i>
-                <div class="info-blocks-in">
-                    <a onclick="loadPartialView('_PhishingContent')"><h3>Phishing</h3></a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons">devices</i>
-                <div class="info-blocks-in">
-                    <a onclick="loadPartialView('_SafeBrowsingContent')"><h3>Safe browsing</h3></a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons">policy</i>
-                <div class="info-blocks-in">
-                    <a onclick="loadPartialView('_AntivirusContent')"><h3>Anti-virus software/firewalls</h3></a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons">cloud</i>
-                <div class="info-blocks-in">
-                    <a onclick="loadPartialView('_BackupsContent')"><h3>Backups</h3></a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks material-icons">lock</i>
-                <div class="info-blocks-in">
-                    <a onclick="loadPartialView('_HTTPSContent')"><h3>HTTPS</h3></a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section-padding gray-bg">
-
-    <section class="section-padding">
     </section>
-    <div class="container" id="contentHere">
+    <section id="content">
+        <div>
+            <div class="row">
+                <div class="col-sm-4 info-blocks">
+                    <i class="icon-info-blocks material-icons">vpn_key</i>
+                    <div class="info-blocks-in">
+                        <a class="linkLoader" onclick="loadPartialView('_PasswordsContent')"><h3>Secure Passwords</h3></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 info-blocks">
+                    <i class="icon-info-blocks material-icons">remove_red_eye</i>
+                    <div class="info-blocks-in">
+                        <a class="linkLoader" onclick="loadPartialView('_PhishingContent')"><h3>Phishing</h3></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 info-blocks">
+                    <i class="icon-info-blocks material-icons">devices</i>
+                    <div class="info-blocks-in">
+                        <a class="linkLoader" onclick="loadPartialView('_SafeBrowsingContent')"><h3>Safe browsing</h3></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 info-blocks">
+                    <i class="icon-info-blocks material-icons">policy</i>
+                    <div class="info-blocks-in">
+                        <a class="linkLoader" onclick="loadPartialView('_AntivirusContent')"><h3>Anti-virus software/firewalls</h3></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 info-blocks">
+                    <i class="icon-info-blocks material-icons">cloud</i>
+                    <div class="info-blocks-in">
+                        <a class="linkLoader" onclick="loadPartialView('_BackupsContent')"><h3>Backups</h3></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 info-blocks">
+                    <i class="icon-info-blocks material-icons">lock</i>
+                    <div class="info-blocks-in">
+                        <a class="linkLoader" onclick="loadPartialView('_HTTPSContent')"><h3>HTTPS</h3></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="section-padding gray-bg">
 
-    </div>
+        <section class="section-padding">
+        </section>
 
+        <div class="container" id="contentHere">
+        </div>
 
-    <br>
-
-
-
-
-
-
-</section>
+    </section>
+</div>
 
