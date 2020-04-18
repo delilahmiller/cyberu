@@ -12,5 +12,7 @@ namespace CyberU.Models
         {
 
         }
+
+        public virtual DbSet<Breach> Breaches { get; set; }
     }
 }

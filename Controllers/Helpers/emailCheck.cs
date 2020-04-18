@@ -2,22 +2,24 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace CyberU.Controllers
 {
-    public class EmailCheck
+    public static class EmailCheck
     {
-        public async Task<List<EmailCheckResult>> CheckEmailAsync(string userName)
+        public static async Task<List<EmailCheckResult>> CheckEmailAsync(string userName)
         {
             using (var client = new HttpClient())
             {
-                client.DefaultRequestHeaders.Add("hibp-api-key", "2258ca8b2c454f58a22ac207473d219c");
+                client.DefaultRequestHeaders.UserAgent.ParseAdd("Cyberu.online");
 
                 using (var request = new HttpRequestMessage(HttpMethod.Get, "https://haveibeenpwned.com/api/v3/breachedaccount/" + userName + "?truncateResponse=false"))
                 {
                     request.Method = HttpMethod.Get;
+                    request.Headers.Add("hibp-api-key", "2258ca8b2c454f58a22ac207473d219c");
 
                     using (var response = await client.SendAsync(request))
                     {

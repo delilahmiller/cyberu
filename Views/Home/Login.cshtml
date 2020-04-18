@@ -1,4 +1,4 @@
-﻿
+﻿@model CyberU.Models.Credential
 @{
     ViewData["Title"] = "Login";
 }
@@ -23,19 +23,19 @@
             </div>
             <div class="col-md-6">
                 <p> </p>
-
+                <h5 class="red-text">@(Model?.Error)</h5>
                 <!-- Form itself -->
-                <form name="sentMessage" id="loginForm" novalidate>
+                <form name="sentMessage" id="loginForm" method="post" asp-action="LoginAttempt">
 
                     <div class="input-field">
                         <input type="text" class="form-control" id="username" required
-                               data-validation-required-message="Please enter your username" />
+                               data-validation-required-message="Please enter your username" asp-for="Username"/>
                         <label for="name" class="">   Username </label>
                     </div>
 
                     <div class="input-field">
                         <input type="password" class="form-control" id="password" required
-                               data-validation-required-message="Please enter your email" />
+                               data-validation-required-message="Please enter your email" asp-for="Password"/>
                         <label for="name" class="">   Password </label>
                     </div>
 

@@ -1,56 +1,87 @@
-﻿@{
+﻿@model CyberU.Models.EmailCheckModel
+@{
     ViewData["Title"] = "Compromised?";
 }
 
 
-    <section class="section-padding gray-bg">
+<section class="section-padding gray-bg">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="about-logo">
-                        <h3>Is your account<span class="color"> COMPROMISED?</span></h3>
-                        <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="about-logo">
+                    <h3>Is your account<span class="color"> COMPROMISED?</span></h3>
+                    <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
 
-                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <p> </p>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p> </p>
 
-                    <!-- Form itself -->
-                    <form name="sentMessage" id="contactForm" novalidate>
+                <!-- Form itself -->
+                <form name="sentMessage" id="contactForm" method="post" asp-action="CheckEmail">
 
-                        <div class="input-field">
-                            <input type="email" class="form-control" id="email" required
-                                   data-validation-required-message="Please enter your email" />
-                            <label for="name" class="">   Email </label>
-                        </div>
+                    <div class="input-field">
+                        <input type="email" class="form-control" id="email" required
+                               data-validation-required-message="Please enter your email" asp-for="Email"/>
+                        <label for="name" class="">   Email </label>
+                    </div>
 
-                        <!--<div class="input-field">
+                    <!--<div class="input-field">
                            <textarea rows="10" cols="100" required class="form-control materialize-textarea"
                                  idation-required-message="Please enter your message" minlength="5"
                                  data-validation-minlength-message="Min 5 characters"
                                   maxlength="999" style="resize:none"></textarea>
                                    <label for="name" class="">   Message </label>
                     </div> 		 -->
-                        <div id="success"> </div> <!-- For success/fail messages -->
-                        <button type="submit" class="btn btn-primary waves-effect waves-dark pull-right">Check</button><br />
-                    </form>
-                </div>
-
+                    <div id="success"> </div> <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary waves-effect waves-dark pull-right">Check</button><br />
+                </form>
             </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="about-logo">
-                        <h3>Your Results</h3>
-                        <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
+        </div>
 
-                    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="about-logo">
+                    <h3>Your Results</h3>
+                    <h5 class="red-text">@(Model?.Email)</h5>
+                    @if (Model != null && Model.Results != null)
+                    {
+                        if (Model.Results.Count == 0)
+                        {
+                            @("Text to display when nothing was returned.")
+                        }
+                        else
+                        {
+                            foreach (var item in Model.Results)
+                            {
+                                @Html.Raw(item.Name);
+                                @Html.Raw(item.Title);
+                                @Html.Raw(item.Domain);
+                                @Html.Raw(item.BreachDate);
+                                @Html.Raw(item.AddedDate);
+                                @Html.Raw(item.ModifiedDate);
+                                @Html.Raw(item.PwnCount);
+                                @Html.Raw(item.Description);
+                                @Html.Raw(item.LogoPath);
+                                foreach (var dataClass in item.DataClasses)
+                                {
+                                    @Html.Raw(dataClass);
+                                }
+                                @Html.Raw(item.IsVerified);
+                                @Html.Raw(item.IsFabricated);
+                                @Html.Raw(item.IsSensitive);
+                                @Html.Raw(item.IsRetired);
+                                @Html.Raw(item.IsSpamList);
+                            }
+                        }
+                    }
                 </div>
             </div>
         </div>
+    </div>
 
-    </section>
+</section>
