@@ -92,6 +92,10 @@ ul.withArrow li span{
 .about-image img {
     width: 100%;
 }
+
+.me-image img{
+	width: 100%;
+}
 img.img-polaroid {
 	margin:0 0 20px 0;
 }
@@ -825,7 +829,7 @@ section.section-padding.gray-bg {
 }
  
   #accordion-alt3 .panel-heading h4 {
-font-size: 13px;
+font-size: 1.2em !important;
 line-height: 28px;
 }
 .panel .panel-heading h4 {
