@@ -20,12 +20,18 @@ namespace CyberU.Controllers
                 {
                     request.Method = HttpMethod.Get;
                     request.Headers.Add("hibp-api-key", "2258ca8b2c454f58a22ac207473d219c");
-
+                        
                     using (var response = await client.SendAsync(request))
                     {
-                        response.EnsureSuccessStatusCode();
-                        var content = await response.Content.ReadAsStringAsync();
-                        return JsonConvert.DeserializeObject<List<EmailCheckResult>>(content);
+                        if (response.StatusCode == HttpStatusCode.OK)
+                        {
+                            var content = await response.Content.ReadAsStringAsync();
+                            return JsonConvert.DeserializeObject<List<EmailCheckResult>>(content);
+                        }
+                        else
+                        {
+                            return new List<EmailCheckResult>();
+                        }
                     }
                 }
             }

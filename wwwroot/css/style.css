@@ -1764,3 +1764,13 @@ span.color {
 .linkLoader:hover {
     cursor: pointer;
 }
+
+
+/*table, td {
+	border: 2px solid #ff5722;
+	border-collapse: collapse;
+}
+
+table td{
+	max-height: 100px;
+}*/
