@@ -8232,23 +8232,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\delil\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Luke Miller\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repos\\cyberu\\CyberU.csproj",
+      "projectUniqueName": "C:\\Repos\\CyberU\\CyberU.csproj",
       "projectName": "CyberU",
-      "projectPath": "C:\\Repos\\cyberu\\CyberU.csproj",
-      "packagesPath": "C:\\Users\\delil\\.nuget\\packages\\",
-      "outputPath": "C:\\Repos\\cyberu\\obj\\",
+      "projectPath": "C:\\Repos\\CyberU\\CyberU.csproj",
+      "packagesPath": "C:\\Users\\Luke Miller\\.nuget\\packages\\",
+      "outputPath": "C:\\Repos\\CyberU\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\delil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Luke Miller\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8312,15 +8308,7 @@
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.0.2, 3.0.2]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[3.0.0, 3.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[3.0.0, 3.0.0]"
+            "version": "[3.0.3, 3.0.3]"
           }
         ],
         "frameworkReferences": {
@@ -8331,7 +8319,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

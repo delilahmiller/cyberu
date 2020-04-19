@@ -1,13 +1,15 @@
-﻿
+﻿@model CyberU.Models.Breach
 @{
     ViewData["Title"] = "Breach";
 }
 
-<section class="section-padding gray-bg"     >
+<section class="section-padding gray-bg">
 
     <section class="section-padding">
     </section>
     <div class="container">
+
+        <h5>@((Model.Id != 0) ? "Edit" : "Create") Breach</h5>
 
         <div class="row">
             <div class="col-md-12">
@@ -19,230 +21,42 @@
             </div>
         </div>
 
-        <div class="about">
+        <form name="upsertBreach" id="upsertBreach" method="post" asp-action="UpsertBreach">
 
+            @if (Model.Id != 0)
+            {
+                <input type="hidden" id="id" asp-for="Id" />
+            }
 
-            <div class="row">
-
-                <div class="col-md-6">
-                    <div class="block-heading-two">
-                        <h3><span>Latest breaches</span></h3>
-                    </div>
-                    <!-- Accordion starts -->
-                    <div class="panel-group" id="accordion-alt3">
-                        <!-- Panel. Use "panel-XXX" class for different colors. Replace "XXX" with color. -->
-                        <div class="panel">
-                            <!-- Panel heading -->
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseOne-alt3">
-                                        <i class="fa fa-angle-right"></i>Marriot – 5.2 Million
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne-alt3" class="panel-collapse collapse">
-                                <!-- Panel body -->
-                                <div class="panel-body">
-                                    In January 2020, hackers obtained login details of two employees and broke into the system. Marriott has said that they have no
-                                    reason to believe that any payment information was breached, just personal data of their customers
-                                    (such as names, addresses, and contact information). <sup>9</sup>
-                                    <br /><br />
-                                    <a href="https://threatpost.com/millions-guests-marriott-data-breach-again/154300/" class="btn btn-primary waves-effect waves-dark">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseTwo-alt3">
-                                        <i class="fa fa-angle-right"></i>Antheus Tecnologia – 81.6 Million
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo-alt3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    Brazilian biometric solutions company Antheus Tecnologia suffered from a significant data leak and other security flaws, which
-                                    lead to an Elasticsearch server containing biometric data to be exposed. An estimated 76,000 fingerprints were on the server.
-                                    Other records included employee company emails and telephone numbers. <sup>9</sup>
-                                    <br /><br />
-                                    <a href="https://techxplore.com/news/2020-03-unsecured-database-exposes-fingerprints.html" class="btn btn-primary waves-effect waves-dark">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseThree-alt3">
-                                        <i class="fa fa-angle-right"></i>Microsoft – 250 Million
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree-alt3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    250 million customer service and support records, going all the way back to 2005, were breached. Microsoft
-                                    has said that only email addresses and IP addresses were exposed, but security researchers believe that it goes beyond that.<br />
-                                    <br />
-                                    According to Microsoft, the records were not publicly available as they were stored on an internal data base and were only exposed
-                                    for just under a month. The tech giant conducted an internal investigation and claims that there was no sign of malicious use. <sup>9</sup>
-                                    <br /><br />
-                                    <a href="https://www.forbes.com/sites/daveywinder/2020/01/22/microsoft-security-shocker-as-250-million-customer-records-exposed-online/#7b44edf24d1b" class="btn btn-primary waves-effect waves-dark">Learn more</a>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseFour-alt3">
-                                        <i class="fa fa-angle-right"></i>Facebook – 267 Million
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour-alt3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    Security expert Bob Diachenko discovered that a database containing personal information of more than 267 million Facebook
-                                    users had been left exposed. The exposed data included names, phone numbers, and Facebook IDs. Hackers in Vietnam are believed to be responsible. <sup>9</sup>
-                                    <br /><br />
-                                    <a href="https://www.techradar.com/news/millions-of-facebook-user-phone-numbers-leaked-online" class="btn btn-primary waves-effect waves-dark">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseFive-alt3">
-                                        <i class="fa fa-angle-right"></i>Capital One – 100 Million
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive-alt3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    The New York Times is reporting that a former Software Engineer hacked the database of Capital One and obtained the personal information of more
-                                    than 100 million people. Federal prosecutors have named it one of the largest data breaches in history with potentially devastating consequences.
-                                    <br /><br />
-                                    In addition to millions of stolen credit card applications – Capital One is the third largest issuer of credit cards in the US – the breach also
-                                    compromised one million Canadian social insurance numbers. <sup>9</sup>
-                                    <br /><br />
-                                    <a href="https://www.nytimes.com/2019/07/29/business/capital-one-data-breach-hacked.html" class="btn btn-primary waves-effect waves-dark">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseSix-alt3">
-                                        <i class="fa fa-angle-right"></i>LifeLabs – 15 Million
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseSix-alt3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    In what is believed to be the largest breach in Canadian history, medical testing company LifeLabs suffered a hack in October that left 15
-                                    million records of patient data exposed. The breach wasn’t announced until December, and the company is now facing a billion dollar class action
-                                    lawsuit. <sup>9</sup>
-                                    <br /><br />
-                                          <a href="https://www.cpomagazine.com/cyber-security/lifelabs-data-breach-the-largest-ever-in-canada-may-cost-the-company-over-1-billion-in-class-action-lawsuit/" class="btn btn-primary waves-effect waves-dark">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseSeven-alt3">
-                                        <i class="fa fa-angle-right"></i>Wawa – 30 Million
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseSeven-alt3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    In late December 2019, fuel and convenience store chain Wawa Inc. said a nine-month-long breach of its payment card processing systems may have led
-                                    to the theft of card data from customers who visited any of its 850 locations nationwide. Now, fraud experts say the first batch of card data stolen
-                                    from Wawa customers is being sold at one of the underground’s most popular crime shops, which claims to have 30 million records to peddle from a
-                                    new nationwide breach. <sup>10</sup>
-                                    <br /><br />
-                                    <a href="https://www.wawa.com/alerts/data-security" class="btn btn-primary waves-effect waves-dark">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseEight-alt3">
-                                        <i class="fa fa-angle-right"></i>OXO – Unknown
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseEight-alt3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    New York-based manufacturer, OXO was hacked in two separate incidents over the past two years, exposing customer information entered on their website.
-                                    The company discovered unauthorized code on its site which captured customer names, billing and shipping addresses, and credit card information. <sup>11</sup>
-                                    <br /><br />
-                                    <a href="https://www.zdnet.com/article/oxo-international-discloses-data-breach-customer-data-over-two-years-impacted/" class="btn btn-primary waves-effect waves-dark">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Accordion ends -->
-
-                </div>
-
-                <div class="col-md-4">
-                    <!--
-    <div class="block-heading-two">
-        <h3><span>Why Choose Us?</span></h3>
-    </div>
-    <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur. <br/><br/>Sed ut perspiciaatis iste natus error sit voluptatem probably haven't heard of them accusamus.</p> -->
-                    <div class="block-heading-two">
-                        <h3><span>Search for a breach</span></h3>
-                    </div>
-
-                    <script async src="https://cse.google.com/cse.js?cx=017738092906235449668:nudv5npckxs"></script>
-                    <div class="gcse-search"></div>
-       
-
-                <!--	<div class="col-md-4">
-            <div class="block-heading-two">
-                <h3><span>Our Expertise</span></h3>
-            </div>
-            <h6>Web Development</h6>
-            <div class="progress pb-sm">
-
-              <div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                 <span class="sr-only">40% Complete (success)</span>
-              </div>
-            </div>
-            <h6>Designing</h6>
-            <div class="progress pb-sm">
-              <div class="progress-bar progress-bar-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                 <span class="sr-only">40% Complete (success)</span>
-              </div>
-            </div>
-            <h6>User Experience</h6>
-            <div class="progress pb-sm">
-              <div class="progress-bar progress-bar-lblue" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                 <span class="sr-only">40% Complete (success)</span>
-              </div>
-            </div>
-            <h6>Development</h6>
-            <div class="progress pb-sm">
-              <div class="progress-bar progress-bar-yellow" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                 <span class="sr-only">40% Complete (success)</span>
-              </div>
-            </div>
-        </div>-->
-
+            <div class="input-field">
+                <input type="text" class="form-control" id="name" required
+                       data-validation-required-message="Please enter your username" asp-for="Name" />
+                <label for="name" class="">   Name </label>
             </div>
 
-           
+            <div class="input-field">
+                <input type="text" class="form-control" id="numberAffected" required
+                       data-validation-required-message="Please enter your email" asp-for="NumberAffected" />
+                <label for="numberAffected" class="">   Number Affected </label>
+            </div>
 
-            <br>
+            <div class="input-field">
+                <input type="text" class="form-control" id="description" required
+                       data-validation-required-message="Please enter your email" asp-for="Description" />
+                <label for="description" class="">   Description </label>
+            </div>
 
+            <div class="input-field">
+                <input type="text" class="form-control" id="url" required
+                       data-validation-required-message="Please enter your email" asp-for="URL" />
+                <label for="url" class="">   URL </label>
+            </div>
 
-
-        </div>
+            <button type="submit" class="btn btn-primary waves-effect waves-dark pull-right">@((Model.Id != 0) ? "Edit" : "Create") Breach</button>
+            <a asp-action="Admin">Back to List</a>
+            <br />
+        </form>
 
     </div>
-        </div>
 </section>
 

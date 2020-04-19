@@ -186,4 +186,7 @@ C:\Repos\CyberU\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Repos\CyberU\obj\Debug\netcoreapp3.0\CyberU.MvcApplicationPartsAssemblyInfo.cache
 C:\Repos\CyberU\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Repos\CyberU\obj\Debug\netcoreapp3.0\Razor\Views\Home\Login.cshtml.g.cs
-C:\Repos\cyberu\obj\Debug\netcoreapp3.0\CyberU.csprojAssemblyReference.cache
+C:\Repos\CyberU\obj\Debug\netcoreapp3.0\CyberU.csproj.CoreCompileInputs.cache
+C:\Repos\CyberU\obj\Debug\netcoreapp3.0\Razor\Views\Home\Admin.cshtml.g.cs
+C:\Repos\CyberU\obj\Debug\netcoreapp3.0\Razor\Views\Home\AdminEdit.cshtml.g.cs
+C:\Repos\CyberU\obj\Debug\netcoreapp3.0\CyberU.genruntimeconfig.cache

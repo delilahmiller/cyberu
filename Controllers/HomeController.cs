@@ -13,6 +13,7 @@ namespace CyberU.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _db;
         public IConfiguration Configuration { get; }
 
         [BindProperty]
@@ -21,10 +22,17 @@ namespace CyberU.Controllers
         [BindProperty]
         public EmailCheckModel EmailCheckModel { get; set; }
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
+        [BindProperty]
+        public Breach Breach { get; set; }
+
+        [BindProperty]
+        public List<Breach> BreachList { get; set; }
+
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, ApplicationDbContext db)
         {
             _logger = logger;
             Configuration = configuration;
+            _db = db;
         }
 
         public IActionResult Index()
@@ -43,7 +51,8 @@ namespace CyberU.Controllers
         }
         public IActionResult Breaches()
         {
-            return View();
+            BreachList = _db.Breaches.ToList();
+            return View(BreachList);
         }
 
         public IActionResult Passwords()
@@ -84,6 +93,31 @@ namespace CyberU.Controllers
             return View();
         }
 
+        public IActionResult Admin()
+        {
+            BreachList = _db.Breaches.ToList();
+            return View(BreachList);
+        }
+
+        public IActionResult AdminEdit(int? id)
+        {
+            Breach = new Breach();
+
+            if (id == null)
+            {
+                return View(Breach);
+            }
+
+            Breach = _db.Breaches.FirstOrDefault(x => x.Id == id);
+
+            if (id == null)
+            {
+                Breach = new Breach();
+                return View(Breach);
+            }
+
+            return View(Breach);
+        }
 
         public ActionResult GetPartialView(string partialViewName)
         {
@@ -102,7 +136,7 @@ namespace CyberU.Controllers
             }
             else
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Admin");
             }
         }
 
@@ -120,6 +154,23 @@ namespace CyberU.Controllers
                 results.Results = await EmailCheck.CheckEmailAsync(EmailCheckModel.Email);
                 return View("Check", results);
             }
+        }
+
+        [HttpPost]
+        public IActionResult UpsertBreach()
+        {
+            if (Breach.Id == 0)
+            {
+                _db.Breaches.Add(Breach);
+            }
+            else
+            {
+                _db.Breaches.Update(Breach);
+            }
+
+            _db.SaveChanges();
+
+            return RedirectToAction("Admin");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

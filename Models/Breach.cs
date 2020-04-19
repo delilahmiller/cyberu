@@ -13,5 +13,6 @@ namespace CyberU.Models
         public string Name { get; set; }
         public string NumberAffected { get; set; }
         public string Description { get; set; }
+        public string URL { get; set; }
     }
 }
