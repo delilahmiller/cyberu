@@ -13,7 +13,7 @@
             <div class="col-md-12">
                 <div class="about-logo">
                     <h3>Stay <span class="color">up-to-date</span> on the latest breaches</h3>
-                    <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
+                    <p>Be aware of online dangers and check if your data was potentially exposed in one of these vulnerabilites.</p>
 
                 </div>
             </div>
@@ -21,7 +21,7 @@
 
         <div class="about">
 
-            <a class="btn btn-primary waves-effect waves-dark pull-right" asp-action="AdminEdit">Add New Breach</a>
+            
             <div class="row">
 
                 <div class="col-md-6">
@@ -52,7 +52,7 @@
                                         <div id="collapseOne-alt3" class="panel-collapse collapse">
                                             <!-- Panel body -->
                                             <div class="panel-body">
-                                                @item.Description
+                                                @Html.Raw(item.Description)
                                                 <br /><br />
                                                 <a href="@item.URL" class="btn btn-primary waves-effect waves-dark">Learn more</a>
                                                 <a asp-action="AdminEdit" asp-route-id="@item.Id" class="btn btn-primary waves-effect waves-dark">Edit</a>
@@ -67,10 +67,16 @@
                     <!-- Accordion ends -->
 
                 </div>
+                <div class="col-md-4">
+                    <div class="block-heading-two">
+                        <h3>Add a breach</h3>
+                        <h5>or edit a breach by choosing one on the left</h5>
+                        <a class="btn btn-primary waves-effect waves-dark pull-right" asp-action="AdminEdit">Add New</a>
+                    </div>
+
+                </div>
 
             </div>
-
-        </div>
     </div>
 </section>
 
