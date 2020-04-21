@@ -9,54 +9,55 @@
     </section>
     <div class="container">
 
-        <h5>@((Model.Id != 0) ? "Edit" : "Create") Breach</h5>
+
 
         <div class="row">
             <div class="col-md-12">
                 <div class="about-logo">
-                    <h3>Stay <span class="color">up-to-date</span> on the latest breaches</h3>
-                    <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
-
+                    <h3>@((Model.Id != 0) ? "Edit" : "Create") Breach</h3>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form name="upsertBreach" id="upsertBreach" method="post" asp-action="UpsertBreach">
 
-        <form name="upsertBreach" id="upsertBreach" method="post" asp-action="UpsertBreach">
+                    @if (Model.Id != 0)
+                    {
+                        <input type="hidden" id="id" asp-for="Id" />
+                    }
 
-            @if (Model.Id != 0)
-            {
-                <input type="hidden" id="id" asp-for="Id" />
-            }
+                    <div class="input-field">
+                        <input type="text" class="form-control" id="name" required
+                               data-validation-required-message="Please enter the name" asp-for="Name" />
+                        <label for="name" class="">   Name </label>
+                    </div>
 
-            <div class="input-field">
-                <input type="text" class="form-control" id="name" required
-                       data-validation-required-message="Please enter your username" asp-for="Name" />
-                <label for="name" class="">   Name </label>
+                    <div class="input-field">
+                        <input type="text" class="form-control" id="numberAffected" required
+                               data-validation-required-message="Please enter the number affected" asp-for="NumberAffected" />
+                        <label for="numberAffected" class="">   Number Affected </label>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="text" class="form-control" id="description" required
+                               data-validation-required-message="Please enter a description" asp-for="Description" />
+                        <label for="description" class="">   Description </label>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="text" class="form-control" id="url" required
+                               data-validation-required-message="Please enter a URL" asp-for="URL" />
+                        <label for="url" class="">   URL </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary waves-effect waves-dark pull-right">@((Model.Id != 0) ? "Save" : "Add") Breach</button>
+                    <a asp-action="Admin">Back to List</a>
+                    <br />
+                </form>
+
             </div>
-
-            <div class="input-field">
-                <input type="text" class="form-control" id="numberAffected" required
-                       data-validation-required-message="Please enter your email" asp-for="NumberAffected" />
-                <label for="numberAffected" class="">   Number Affected </label>
-            </div>
-
-            <div class="input-field">
-                <input type="text" class="form-control" id="description" required
-                       data-validation-required-message="Please enter your email" asp-for="Description" />
-                <label for="description" class="">   Description </label>
-            </div>
-
-            <div class="input-field">
-                <input type="text" class="form-control" id="url" required
-                       data-validation-required-message="Please enter your email" asp-for="URL" />
-                <label for="url" class="">   URL </label>
-            </div>
-
-            <button type="submit" class="btn btn-primary waves-effect waves-dark pull-right">@((Model.Id != 0) ? "Save" : "Add") Breach</button>
-            <a asp-action="Admin">Back to List</a>
-            <br />
-        </form>
-
+        </div>
     </div>
 </section>
 

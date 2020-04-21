@@ -44,12 +44,12 @@
                                         <!-- Panel heading -->
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseOne-alt3">
+                                                <a data-toggle="collapse" data-parent="#accordion-alt3" href='@("#collapse" + item.Id)'>
                                                     <i class="fa fa-angle-right"></i>@item.Name – @item.NumberAffected
                                                 </a>
                                             </h4>
                                         </div>
-                                        <div id="collapseOne-alt3" class="panel-collapse collapse">
+                                        <div id='@("collapse" + item.Id)' class="panel-collapse collapse">
                                             <!-- Panel body -->
                                             <div class="panel-body">
                                                 @Html.Raw(item.Description)
